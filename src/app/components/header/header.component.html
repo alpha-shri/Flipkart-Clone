@@ -1,0 +1,17 @@
+<header>
+    <div class="navbar bg-primary shadow">
+        <div class="navbar-brand">
+            <img routerLink="products" class="logo mr-2" src="assets/img/logo.png" alt="logo">
+            <div class="form-group">
+                <input type="text" class="form form-control" name="" id="" placeholder="search products">
+            </div>
+            <span class="fas fa-search search-icon"></span>
+        </div>
+
+        <button class="btn btn-primary" routerLink="/cart">
+            <i class="fas fa-cart-plus"></i>
+            <div class="badge bg-danger">{{ totalItems }}</div>
+        </button>
+
+    </div>
+</header>
