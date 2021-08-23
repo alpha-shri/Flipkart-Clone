@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
   public totalItems: number = 0;
 
   products: Product[] = [];
+  public searchTerm: string = "";
+
 
   constructor(private cartService: CartService,
     private flipkartService: FlipkartService) { }
@@ -27,6 +29,12 @@ export class HeaderComponent implements OnInit {
         .subscribe( data => {
             this.totalItems = data.length;
         })
+  }
+
+  public search(event: any){
+      this.searchTerm = (event.target as HTMLInputElement).value; 
+      console.log(this.searchTerm);
+      this.cartService.search.next(this.searchTerm);
   }
 
 

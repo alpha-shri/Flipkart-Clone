@@ -36,14 +36,16 @@
 <div class="container">
     <div class="row">
 
-        <div class="card col-md-3 shadow rounded" *ngFor="let product of productList">
+        <div class="card col-md-3 shadow rounded"
+             *ngFor="let product of productList | filter:searchKey: 'title' ">
             <img src="{{ product.image }}" alt="">
 
             <h5 class="elipse">{{ product.title }}</h5>
             <p class="elipse">{{'Category: ' +product.category }}</p>
             <p class="elipse">{{ product.description }}</p>
             <p><strong>{{ 'Price: ₹ ' +product.price }}</strong></p>
-            <div class="btn btn-primary" (click)="addToCart(product)">Add to Cart</div>
+            <div class="btn btn-primary" (click)="addToCart(product)">
+                Add to Cart</div>
         </div>
 
 

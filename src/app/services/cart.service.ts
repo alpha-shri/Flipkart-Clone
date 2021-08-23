@@ -11,6 +11,9 @@ export class CartService {
   // we can fetch(subscribe) to it.
   public productList = new BehaviorSubject<any>([]);
 
+  //Send data across HeadComponent to Component
+  public search = new BehaviorSubject<string>("");
+
   constructor() {
     console.log("Inside CartService");
   }
@@ -18,7 +21,7 @@ export class CartService {
   // Getter
   getProducts() {
     return this.productList.asObservable();
-  }
+  } 
 
   // Setter
   setProducts(product: any) {

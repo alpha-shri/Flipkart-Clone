@@ -9,18 +9,23 @@ import { ProductsComponent } from './components/products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FlipkartService } from './services/flipkart.service';
 import { CartService } from './services/cart.service';
+import { FilterPipe } from './shared/filter.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CartComponent,
-    ProductsComponent
+    ProductsComponent,
+    FilterPipe
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FlipkartService, CartService],
   bootstrap: [AppComponent]
